@@ -4,10 +4,10 @@
 struct bmp_header {
     char signature[2];      // == "BM". Must be present in every BMP file
     int  file_size;         // Size of the entire file
+    int reserved;
     int data_offset;        // Starting position of the payload
-};
 
-struct bmp_properties {
+    // Image properties
     int size;               // == 40. Size of this section in bytes
     int width;              // Width of the image in pixels
     int height;             // Height of the image in pixels
