@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/bmp_reader.dir/main.c.o CMakeFiles/bmp_reader.dir/lib/bmp_reader_methods.c.o  -o bmp_reader 

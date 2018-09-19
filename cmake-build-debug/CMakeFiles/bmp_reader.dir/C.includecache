@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/franciscohanna92/Facultad/teoria-informacion/practico1/bmp_reader/lib/bmp_reader_methods.h
+stdio.h
+-
+
+/home/franciscohanna92/Facultad/teoria-informacion/practico1/bmp_reader/lib/bmp_reader_types.h
+
+/home/franciscohanna92/Facultad/teoria-informacion/practico1/bmp_reader/main.c
+stdio.h
+-
+lib/bmp_reader_types.h
+/home/franciscohanna92/Facultad/teoria-informacion/practico1/bmp_reader/lib/bmp_reader_types.h
+lib/bmp_reader_methods.h
+/home/franciscohanna92/Facultad/teoria-informacion/practico1/bmp_reader/lib/bmp_reader_methods.h
+

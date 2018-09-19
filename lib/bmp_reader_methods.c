@@ -1,5 +1,19 @@
 #include <stdio.h>
+#include <memory.h>
 #include "bmp_reader_types.h"
+
+/**
+ * Checks if the file provided is a BMP one.
+ * @param fp A pointer to a BMP file
+ * @return 1 if the file is a BMP one, 0 otherwise.
+ */
+int check_file_format(FILE* fp) {
+    char signature[3] = {0, 0, '\0'};
+    char BM[] = "BM";
+    fread(signature, 2, 1, fp);
+
+    return strcmp(signature, BM);
+}
 
 /**
  * Reads the BMP file header
@@ -32,13 +46,11 @@ struct bmp_header read_bmp_header(FILE* fp) {
 }
 
 void print_bmp_header(struct bmp_header bh) {
-    printf("*** BMP Header ***\n");
-    printf("Signature:\t\t%s\n", bh.signature);
-    printf("File size:\t\t%d bytes\n", bh.file_size);
-    printf("Reseved:\t\t%d\n", bh.reserved);
-    printf("Data Offset:\t%d bytes\n\n", bh.data_offset);
+    printf("Signature:\t\t\t%s\n", bh.signature);
+    printf("File size:\t\t\t%d bytes\n", bh.file_size);
+    printf("Reseved:\t\t\t%d\n", bh.reserved);
+    printf("Data Offset:\t\t%d bytes\n\n", bh.data_offset);
 
-    printf("*** Image properties ***\n");
     printf("Section size:\t\t%d bytes\n", bh.size);
     printf("Image width:\t\t%dpx\n", bh.width);
     printf("Image height:\t\t%dpx\n", bh.height);
